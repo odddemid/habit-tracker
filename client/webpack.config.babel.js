@@ -6,8 +6,6 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 dotenv.config();
 const { NODE_ENV } = process.env;
 
-console.log(path.resolve(__dirname));
-
 export default {
   mode: NODE_ENV === "development" ? "development" : "production",
   entry: ["./client/index.tsx"],
