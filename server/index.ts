@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
 import path from "path";
-import express from "express";
+import express, { NextFunction, Request, Response } from "express";
 import { createDevServer } from "./dev-server";
 
 dotenv.config();
@@ -13,7 +13,31 @@ const bootstrap = async () => {
     await createDevServer(app);
   }
 
-  app.get("*", (req, res) => {
+  app.get("/api/habits", (req: Request, res: Response) => {
+    res.send(200);
+  });
+
+  app.get("/api/habits/:id", (req: Request, res: Response) => {
+    res.send(200);
+  });
+
+  app.post("/api/habits", (req: Request, res: Response) => {
+    res.send(200);
+  });
+
+  app.put("/api/habits/:id", (req: Request, res: Response) => {
+    res.send(200);
+  });
+
+  app.delete("/api/habits/:id", (req: Request, res: Response) => {
+    res.send(200);
+  });
+
+  app.delete("/api/habits", (req: Request, res: Response) => {
+    res.send(200);
+  });
+
+  app.get("*", (req: Request, res: Response) => {
     res.sendFile(path.resolve(__dirname, "../client/index.html"));
   });
 
